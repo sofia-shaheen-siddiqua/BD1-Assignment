@@ -33,8 +33,8 @@ app.get("/membership-discount",(req,res)=>{
 
 app.get("/calculate-tax",(req,res)=>{
       let cartTotal = parseFloat(req.query.cartTotal);
-      let finalPrice = cartTotal + ((taxRate/100)*cartTotal);
-      res.send(finalPrice.toString());
+      let tax = ((taxRate/100)*cartTotal);
+      res.send(tax.toString());
 });
 
 app.get("/estimate-delivery",(req,res)=>{
